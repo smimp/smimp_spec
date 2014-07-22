@@ -6,7 +6,9 @@ Author: Adam Caudill <adam@adamcaudill.com>
 
 ### Copyright & Intellectual Property Statement
 
-In the interest of this specification being used freely, this specification in released under the CC0 license. See LICENSE for more details.
+Copyright 2014, Adam Caudill.
+
+In the interest of this specification being used freely, this specification in released under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. See LICENSE for more details.
 
 This work is dedicated to the public good, and it’s the intention of the authors that it be freely available to the public, and the technology be freely usable. Security is a universal right of all people, the purpose of this work is to protect and preserve that right in the face of those that seek to destroy it globally.
 
