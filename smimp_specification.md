@@ -156,7 +156,7 @@ Each record shall contain fields for the following data, those followed by an as
 * SMIMP Address*
 * Public Ed25519 Key*
 * Public Curve25519 / XSalsa20 / Poly1305 Key*
-* Hash of last change*
+* Signed hash of last change*
 * Name
 * Web Site URL
 * Profiles (an optional list of social media profiles the user claims is theirs)
