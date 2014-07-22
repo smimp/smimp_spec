@@ -161,10 +161,15 @@ Each record shall contain fields for the following data, those followed by an as
 * Web Site URL
 * Profiles (an optional list of social media profiles the user claims is theirs)
 * Additional Data (an optional JSON document with user controlled fields)
+* Date of change - Timestamp of when the change was made (`YYYY-MM-DD hh:mm:ss`); the time will be in UTC. Example: `2014-07-16 19:20:30`
 
-The document above will be wrapped in another document with three fields; data (which will contain the above document), hash of the data and signature, which will contain the signature on the data.
+The document above will be wrapped in another JSON document with two fields; `data` (which will contain the above document), and the signed hash (`signed_hash`), which will be the hash of the `data` field, signed by the user's Ed25519 key.
+
+The hash must be signed with the Ed25519 key specified in the previous change record (except for the initial entry in the chain).
 
 If the hash or signature fail to validated, the data must be discarded.
+
+See `update_profile` for more information.
 
 #### Get User Avatar (Optional)
 The `user_avatar` API returns the user supplied JPG or PNG file that can be displayed by the client. It is called by the client by GETing `user_avatar/{address}`; the server will respond with a JSON document with two fields; the URL where the file can be found (must be over HTTPS), and the file hash, signed with the user’s master private Ed25519 key, to confirm that the user in question uploaded the image.
