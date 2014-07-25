@@ -405,7 +405,7 @@ For the the `email` message type, the message field is defined as a JSON documen
 * Reply To Message ID - If a reply, the Message ID of the message being replied to; if not a reply, null.
 Date Sent - If a message is delayed for some reason, this may be different than the timestamp of when the server received the message. Shouldn’t be trusted, as could be set to an arbitrary value.
 * Body - The body of the message, in Markdown format. No HTML / CSS / Javascript / etc. may be included. External content is rendered at the discretion of the recipient's client. UTF8.
-Attachments - An array of JSON documents containing the file name and Base64 encoded file content.
+* Attachments - An array of JSON documents containing the file name and Base64 encoded file content.
 * Extensions Data - This is a JSON document containing key-value pairs, for messaging client extensions. This allows additional data to be passed without protocol modifications, allowing the industry quickly evolve functionality. The client isn’t required to use, or even parse this field.
 * Reply To - Address sender requests replies be sent to. May be null; if not null, must be a valid SMIMP address.
 * Auto-Reply Address - Address that must be used when recipient generated errors or notifications (out of office, etc.). Must be at the same domain as the sender. 
