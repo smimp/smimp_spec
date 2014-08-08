@@ -50,8 +50,6 @@ Here are the primary goals of the project, goals that must be met to consider th
 
 **Proof of Work** - Messages will each have a proof of work associated with it as an anti-spam measure; the receiving mail server is responsible for determining the difficulty based on factors of its choosing.
 
-**User Authentication** - This infrastructure should be usable by other systems to validate that a user is who they claim to be.
-
 ### System Overview
 
 SMIMP can be divided into two major parts; identity management and messaging. The identity management system is the core of the design, which the messaging system leverages and builds upon. The identity management system can leverage for other systems, and such use is encouraged.
