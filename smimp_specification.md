@@ -19,6 +19,7 @@ A special thanks goes out to those that have helped make this possible - without
 * Taylor Hornby
 * Brandon Wilson
 * Graham Smith
+* Marsh Ray
 
 ### Introduction
 
