@@ -83,11 +83,11 @@ The intention is that as much detail as possible be made available to the public
 
 #### Finding Mail Servers
 
-To find a user’s mail server, the client parse the domain part of the address, and pull the `TXT` DNS records for the domain. The client will check all record for one that matches the following pattern; if more than one are found, only the first should be used.
+To find a user’s mail server, the client parse the domain part of the address, and pull the `/.well-known/smimp.txt` file for the domain (`https://example.com/.well-known/smimp.txt`). The file should like one fully qualified domain name; if more than one are found, only the first should be used.
 
-`smimp=https://*`
+smimp.txt: `smimp.example.com`
 
-The URL specified after `smimp=` will be used as the base address for all operation with the server.
+The domain specified will be used as the base address for all operation with the server. The protocol specifier (`https://`) should not be specified; the client is responsible for adding it. Any record that specifies `http://` is invalid, and must not be used.
 
 #### HTTPS Transport
 
@@ -492,17 +492,9 @@ Using HTTPS has a transport layer, instead of a new custom transport layer was d
 
 This approach also allows us to avoid some issues that we would have to address otherwise, such as whether to use TLS, or a simpler TLS-like protocol to provide protection to the data on the wire. It also avoids discussion of how to handle server authentication (using the existing CA infrastructure, or something else. While the current CA infrastructure is far from ideal, trying to address these issues would serve to complicate implementation, slow the public review process, and possibly make the protocol seem too “radical” for corporate environments. While it’s possible we could provide better security by addressing the CA issue here, the delays and possible controversy would prolong the harm being done to the public by traditional email.
 
-#### Using TXT Record To Find Server
-
-A theme throughout this design is easy of implementation and deployment. The use of a `TXT` DNS record to identify the SMIMP server is part of that theme; by using an existing record type, SMIMP can be deployed without any changes to the DNS infrastructure.
-
-The largest concern with this decision is the trustworthiness of the DNS data, and if retrieving that data would provide metadata to a passive attacker. The state of DNS security is far from ideal. Multiple IETF working groups are looking for solutions to improve the situation. At this time, traditional email suffers from the same problems - relying on an MX record that could be altered, or having queries monitored to collect metadata. We hope that the working groups are able to improve the security situation, and provide better protection for this data.
-
-Given the limited options available, this is believed to be the best solution at this time.
-
 #### Single SMIMP Server per Domain
 
-As defined, the SMIMP `TXT` DNS record contains only a single server. This could be modified to support multiple servers (a list separated by semicolons perhaps), but it’s believed that this is shifting an infrastructure problem to the client. 
+As defined, the `\.well-known\smimp.txt` file contains only a single server. This could be modified to support multiple servers, but it’s believed that this is shifting an infrastructure problem to the client. 
 
 Today, the issues with load balancing, geo-distributing servers, and redundancy are all easily addressed with existing technology - especially in the HTTPS space. As such, the burden of dealing with a down server is that of the server infrastructure. The client should still queue messages that can’t be delivered, but in general, the server infrastructure should handle issues transparently as is done with most large web sites.
 
