@@ -2,11 +2,11 @@
 
 Version: v0.1
 
-Author: Adam Caudill <adam@adamcaudill.com>
+Author: [Adam Caudill](https://adamcaudill.com/) (adam@adamcaudill.com)
 
 ### Copyright & Intellectual Property Statement
 
-Copyright 2014, Adam Caudill.
+Copyright 2014 - 2016, Adam Caudill.
 
 In the interest of this specification being used freely, this specification in released under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. See LICENSE for more details.
 
@@ -16,10 +16,11 @@ This work is dedicated to the public good, and it’s the intention of the autho
 
 A special thanks goes out to those that have helped make this possible - without them, this never would have happened.
 
-* Taylor Hornby
-* Brandon Wilson
-* Graham Smith
-* Marsh Ray
+* [Taylor Hornby](https://defuse.ca/)
+* [Brandon Wilson](http://brandonw.net/)
+* [Graham Smith](https://twitter.com/neuegram)
+* [Marsh Ray](https://twitter.com/marshray)
+* [Scott Arciszewski](https://paragonie.com/)
 
 ### Introduction
 
