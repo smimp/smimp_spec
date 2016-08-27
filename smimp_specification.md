@@ -22,6 +22,10 @@ A special thanks goes out to those that have helped make this possible - without
 * [Marsh Ray](https://twitter.com/marshray)
 * [Scott Arciszewski](https://paragonie.com/)
 
+### Document Status
+
+This specification is in development, and subject to change at any time. A formal release will be announced when the document is considered to be stable. Until such time, it is recommended that care be exercised when implementing this, as breaking changes may be introduced. Once a formal release is announced, the document will be frozen, and any future changes will occur in a new version.
+
 ### Introduction
 
 SMIMP is a communication and identity system designed to address the modern threats that weren’t considered when the traditional email system was designed. Transparent encryption, forward secrecy, simple self hosting, auditable user information, and strong privacy are all baked into the design from the beginning.
