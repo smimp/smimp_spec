@@ -84,11 +84,15 @@ The intention is that as much detail as possible be made available to the public
 
 #### Finding Mail Servers
 
-To find a user’s mail server, the client parse the domain part of the address, and pull the `/.well-known/smimp.txt` file for the domain (`https://example.com/.well-known/smimp.txt`). The file should like one fully qualified domain name; if more than one are found, only the first should be used.
+To find a user’s mail server, the client parse the domain part of the address, and pull the `/.well-known/smimp.txt` file for the domain (`https://example.com/.well-known/smimp.txt`). The file should contain one fully qualified domain name; if more than one are found, only the first should be used.
 
 smimp.txt: `smimp.example.com`
 
-The domain specified will be used as the base address for all operation with the server. The protocol specifier (`https://`) should not be specified; the client is responsible for adding it. Any record that specifies `http://` is invalid, and must not be used.
+The domain specified will be used as the base address for all operation with the server. The protocol specifier (`https://`) is optional; the client is responsible for adding it if missing. Any record that specifies `http://` is invalid, and must not be used.
+
+The domain specified in `sminmp.txt` may also include a path, to which the standard API paths will be appended to.
+
+smimp.txt: `https://smimp.example.com/smimp/`
 
 #### HTTPS Transport
 
